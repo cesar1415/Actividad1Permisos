@@ -3,7 +3,7 @@
 @section('title', 'Crear')
 
 @section('content_header')
-    <h1>Crear</h1>
+    <h1>Crear Producto</h1>
 @stop
 
 @section('content')
@@ -24,7 +24,7 @@
             </div>
             <br>
             <div class="form-group, p-2">
-                <button class="btn btn-primary" type="submit">Crear nuevo usuario</button>
+                <button class="btn btn-primary" type="submit">Actualizar</button>
                 <a href="{{route('products.index')}}" class="btn btn-danger" >Cancelar</a>
             </div>
         </form>

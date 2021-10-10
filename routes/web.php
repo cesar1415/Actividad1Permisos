@@ -20,8 +20,8 @@ Route::get('/', function () {
 
 Route::resource('products', 'App\Http\Controllers\ProductController');
 
-//Route::middleware(['auth:sanctum', 'verified'])->get('/produtc', function () {
+// Route::middleware(['auth:sanctum', 'verified'])->get('/produtc', function () {
 //    return view('product.index');
-//})->name('product');
+// })->name('product');
 
 

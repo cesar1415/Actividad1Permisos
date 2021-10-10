@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Listado de productos</h1>
 @stop
 
 @section('content')
@@ -32,13 +32,11 @@
                             <th>{{$product->description}}</th>
                             <th>{{$product->cantidad}}</th>
                             <td>
-                            <form action="#" method="post">
+                            <form action="{{route('products.destroy', $product->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <a href="{{route('products.show',$product->id)}}"
-                                   class="btn btn-sm btn-outline-info">Detalles</a>
-                                <a href="#"
-                                   class="btn btn-sm btn-outline-warning ">Editar</a>
+                                <a href="{{route('products.show',$product->id)}}" class="btn btn-sm btn-outline-info">Detalles</a>
+                                <a href="{{route('products.edit',$product->id)}}" class="btn btn-sm btn-outline-warning ">Editar</a>
                                 <button class="btn btn-sm btn-outline-danger submit-prevent-button" type="sumbit">Eliminar</button>
                             </form>
                         </td>

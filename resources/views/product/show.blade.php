@@ -8,6 +8,7 @@
 
 @section('content')
     <div>
+        <a class="btn btn-danger" href="{{route('products.index')}}">Regresar</a>
         <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 p-3">
                 <h2 class="display-5">{{$product->name}}</h2>
