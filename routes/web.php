@@ -20,6 +20,13 @@ Route::get('/', function () {
 
 Route::resource('products', 'App\Http\Controllers\ProductController');
 
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::middleware('role:admin|client')->group(function(){
+        Route::resource('products', 'App\Http\Controllers\ProductController');
+    });
+});
+
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/produtc', function () {
 //    return view('product.index');
 // })->name('product');
