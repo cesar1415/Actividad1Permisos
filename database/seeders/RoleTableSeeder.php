@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class RoleTableSeeder extends Seeder
 {
@@ -13,6 +14,17 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-
+        Role::create([
+            'name'=>'admin',
+            'guard_name'=>'web',
+        ]);
+        Role::create([
+            'name'=>'client',
+            'guard_name'=>'web',
+        ]);
+        Role::create([
+            'name'=>'employed',
+            'guard_name'=>'web',
+        ]);
     }
 }
