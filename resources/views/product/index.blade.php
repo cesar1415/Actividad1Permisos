@@ -8,7 +8,9 @@
 
 @section('content')
     <div>
+        @hasanyrole('admin|employed')
         <a href="{{route('products.create')}}" type="button" class="btn btn-secondary btn-lg">Crear</a>
+    @endhasanyrole
     </div>
     <br>
     <div class="modal-content">
@@ -21,7 +23,9 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Cantidad</th>
+                        @hasanyrole('admin|employed')
                         <th scope="col">Acciones</th>
+                        @endhasanyrole
                     </tr>
                     </thead>
                     <tbody>
@@ -35,9 +39,13 @@
                             <form action="{{route('products.destroy', $product->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
+                                @hasanyrole('admin|employed')
                                 <a href="{{route('products.show',$product->id)}}" class="btn btn-sm btn-outline-info">Detalles</a>
+                                @endhasanyrole
+                                @role('admin')
                                 <a href="{{route('products.edit',$product->id)}}" class="btn btn-sm btn-outline-warning ">Editar</a>
                                 <button class="btn btn-sm btn-outline-danger submit-prevent-button" type="sumbit">Eliminar</button>
+                                @endrole
                             </form>
                         </td>
                     </tr>

@@ -21,7 +21,9 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::middleware('role:admin|client|employed')->group(function(){
     Route::resource('products', 'App\Http\Controllers\ProductController');
+});
 });
 
 
