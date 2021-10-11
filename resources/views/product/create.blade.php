@@ -24,7 +24,7 @@
             </div>
             <br>
             <div class="form-group, p-2">
-                <button class="btn btn-primary" type="submit">Actualizar</button>
+                <button class="btn btn-primary" type="submit">Crear</button>
                 <a href="{{route('products.index')}}" class="btn btn-danger" >Cancelar</a>
             </div>
         </form>
